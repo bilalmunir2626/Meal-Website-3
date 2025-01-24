@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Bites - Culinary Masterpiece</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #ff4d4d;
+            --secondary-color: #4CAF50;
+            --accent-color: #FFC107;
+            --background-color: #f4f4f4;
+            --text-color: #2c3e50;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: rgba(235, 227, 227, 0.705);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: 600;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -5px;
+            left: 50%;
+            background-color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: 
+                linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), 
+                url('food.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 200px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            padding: 15px 40px;
+            margin-top: 30px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.3);
+        }
+
+        /* Menu Section */
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 60px;
+        }
+
+        .menu-item {
+            flex-basis: calc(33.333% - 30px);
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .menu-item img {
+            width: 50%;
+            height: 50%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+            margin: auto;
+            display: block;
+        }
+
+        .menu-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .menu-item-content {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .menu-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--text-color), #34495e);
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        /* Responsive Adjustments */
+        @media screen and (max-width: 1024px) {
+            .menu-item {
+                flex-basis: calc(50% - 30px);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            nav .container {
+                flex-direction: column;
+            }
+
+            nav a {
+                margin: 10px 0;
+            }
+
+            .menu-item {
+                flex-basis: 100%;
+            }
+
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Delicious Bites</h1>
+            <p>Best Meal</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <a href="#">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#">Chef's Special</a>
+            <a href="#">Reservations</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Taste Beyond Imagination</h2>
+                <p>Where Every Dish Tells a Delicious Story</p>
+                <a href="#menu" class="cta-button">Explore Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="container">
+        <div class="menu">
+            <div class="menu-item">
+                <img src="pasta.png" alt="Signature Pasta">
+                <div class="menu-item-content">
+                    <h3>Artisan Pasta</h3>
+                    <p>Handcrafted pasta with exotic herbs and premium ingredients.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="burger.png" alt="Gourmet Burger">
+                <div class="menu-item-content">
+                    <h3>Gourmet Burger</h3>
+                    <p>Premium beef patty with truffle mayo and caramelized onions.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="salad.png" alt="Harvest Salad">
+                <div class="menu-item-content">
+                    <h3>Harvest Salad</h3>
+                    <p>Fresh organic greens with seasonal vegetables and citrus dressing.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="pasta.png" alt="Signature Pasta">
+                <div class="menu-item-content">
+                    <h3>Artisan Pasta</h3>
+                    <p>Handcrafted pasta with exotic herbs and premium ingredients.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="burger.png" alt="Gourmet Burger">
+                <div class="menu-item-content">
+                    <h3>Gourmet Burger</h3>
+                    <p>Premium beef patty with truffle mayo and caramelized onions.</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="salad.png" alt="Harvest Salad">
+                <div class="menu-item-content">
+                    <h3>Harvest Salad</h3>
+                    <p>Fresh organic greens with seasonal vegetables and citrus dressing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Delicious Bites. A Culinary Journey Awaits.</p>
+    </footer>
+</body>
+</html>
